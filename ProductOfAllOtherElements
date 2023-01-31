@@ -1,0 +1,29 @@
+#include <iostream>
+
+int main(){
+    std::cout << "Enter 10 numbers one by one: \n";
+    int sizeOfArr = 0;
+    int array[10] = {};
+    for(int i = 0; i < 10; i++){
+        std::cin >> array[i];
+    }
+    int size = sizeof(array) / sizeof(int);
+    int newArray[10] = {};
+
+    for(int i = 0; i < size; i++){
+       int product = 1;
+
+        for(int j = 0; j < size; j++){
+
+            if(j != i){
+                product *= array[j];
+
+            }
+        }
+
+        newArray[i] = product;
+    }
+    for(int i = 0; i < size; i++){
+        std::cout << newArray[i] << " ";
+    }
+}
